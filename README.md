@@ -47,14 +47,6 @@ print(summary)
 
 - `summarize_text(text)`: Cleans and summarizes text.
 
-## File Structure
-
-```
-/
-│-- utils.py  # Core functions
-│-- requirements.txt  # Dependencies
-│-- README.md  # Documentation
-```
 
 ## Dependencies
 
