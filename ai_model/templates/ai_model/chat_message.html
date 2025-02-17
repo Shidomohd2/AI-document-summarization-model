@@ -1,0 +1,17 @@
+{% for message in messages %}
+<div class="flex {% if message.is_user %}justify-end{% else %}justify-start{% endif %}">
+    <div class="max-w-3/4 p-4 rounded-lg 
+        {% if message.is_user %}bg-blue-100{% else %}bg-gray-100{% endif %}">
+        <div class="text-sm {% if message.is_user %}text-blue-600{% else %}text-gray-600{% endif %}">
+            {% if message.is_user %}You{% else %}WIZO.AI{% endif %}
+            <span class="text-xs text-gray-400 ml-2">{{ message.timestamp|time }}</span>
+        </div>
+        <div class="mt-1" dir="auto">{{ message.content|linebreaks }}</div>
+        {% if not message.is_user and message.page_number %}
+        <div class="mt-2 text-xs text-gray-500">
+            Page {{ message.page_number }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
