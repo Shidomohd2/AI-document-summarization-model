@@ -36,16 +36,6 @@ python manage.py runserver
 - `POST /chat/` - Upload a document or request a summary by page number.
 - `GET /chat/history/` - Retrieve chat history.
 
-### Extract and Summarize Text in Django Views
-
-```python
-from .utils import process_file, extract_pages
-
-file_path = "sample.pdf"
-pages = extract_pages(file_path)
-summary = process_file(pages[0])  # Summarize first page
-print(summary)
-```
 
 ### File Extraction Functions
 - `extract_text_from_pdf(file_path)`: Extracts text from PDFs.
